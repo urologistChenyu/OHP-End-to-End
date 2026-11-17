@@ -6,4 +6,8 @@ Frozen predictors: four-feature clinical L2 logistic regression; six-feature tra
 
 The habitat KNN imputer contains the 296 x 5502 numeric training-donor feature matrix needed for identical missing-region handling. It has no patient names, identifiers, raw CT images or pathological outcome labels. It is a fitted preprocessing asset, not disposable cache. Removing it changes predictions when subregions are absent.
 
-Anonymous OHP labels and branch probabilities are provided in https://github.com/urologistChenyu/OHP-Paper-Data-Models/tree/main/data/predictions. The inference application contains no source study CT, DICOM, manual masks, clinical records or private reader responses. The bundled clinical template has a header only. Empty masks or spatial mismatches request manual review rather than emit fabricated scores. The tool estimates risk for research and is not an autonomous treatment selector.
+The package contains no study CT, DICOM, manual masks, clinical case tables or reader records. The bundled clinical template has a header only. Training and validation data are not redistributed. Empty masks or spatial mismatches request manual review rather than emit fabricated scores. The tool estimates risk for research and is not an autonomous treatment selector.
+
+## Optional local operating settings in v1.1.0
+
+The Local Settings tab supports a custom threshold, a local intercept update from labelled calibration data, and an assumption-dependent prevalence scenario. Defaults retain the original probability and threshold. Optional results and parameters are exported separately; original predictions, branch explanations and model weights are unchanged. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions, input requirements and verification scope. The original inference evaluation used v1.0.0; these optional settings have not been clinically validated in the reported cohorts.

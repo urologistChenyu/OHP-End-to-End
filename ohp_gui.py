@@ -97,7 +97,7 @@ class OHPApp(tk.Tk):
 
     def __init__(self) -> None:
         super().__init__()
-        self.title('OHP End-to-End Analysis')
+        self.title('OHP End-to-End Analysis · v1.1.0')
         self.geometry('1440x900')
         self.minsize(1180, 760)
         self.configure(background='#f4f7fb')
@@ -220,6 +220,11 @@ class OHPApp(tk.Tk):
         self._build_viewer(self.viewer_tab)
         self._build_branch(self.branch_tab)
         self._build_export(self.export_tab)
+        from local_settings_panel import LocalSettingsPanel
+        self.local_tab = ttk.Frame(self.notebook, style='App.TFrame')
+        self.notebook.add(self.local_tab, text='Local Settings')
+        self.local_settings_panel = LocalSettingsPanel(self.local_tab, on_export=self._fill_export_list)
+        self.local_settings_panel.pack(fill='both', expand=True)
 
     def _build_sidebar(self, parent: ttk.Frame) -> None:
         ttk.Label(parent, text='Case Workspace', style='CardTitle.TLabel').pack(anchor='w', padx=20, pady=(22, 4))
@@ -761,6 +766,7 @@ class OHPApp(tk.Tk):
         self._segmentation_progress = None
         self._segmentation_progress_mtime = 0.0
         self._predictions = []
+        self.local_settings_panel.clear_batch()
         if preserve_viewer:
             self._viewer_cache.clear()
             self._viewer_spacing_cache.clear()
@@ -820,7 +826,7 @@ class OHPApp(tk.Tk):
         order = fusion.get('weights_order', ['Clinical_prob', 'Traditional_prob', 'Habitat_prob', '2D_prob', '2.5D_prob'])
         if len(weights) == len(order) == 5:
             terms = ' + '.join((f'{float(w):.6f}×{name}' for (w, name) in zip(weights, order)))
-            self.fusion_formula_var.set('OHP% = 100 × p; Positive / Positive: p ≥ 0.3530539465')
+            self.fusion_formula_var.set('OHP% = 100 × p; higher risk if p ≥ 0.3530539465')
             try:
                 expected = []
                 for (_, row) in df.iterrows():
@@ -828,7 +834,7 @@ class OHPApp(tk.Tk):
                 max_delta = max((abs(float(a) - float(b)) for (a, b) in zip(expected, df['fusion_prob'].tolist()))) if expected else 0.0
                 max_ohp = max((abs(float(a) * 100.0 - float(b)) for (a, b) in zip(df['fusion_prob'].tolist(), df['OHP_percent'].tolist()))) if expected else 0.0
                 ok = max(max_delta, max_ohp) <= 1e-10
-                self.fusion_integrity_var.set(f"Fusion integrity: {('PASS' if ok else 'FAIL')}; max |Δfusion|={max_delta:.3g}, max |ΔOHP|={max_ohp:.3g}source: {pred_path.name}")
+                self.fusion_integrity_var.set(f"Fusion integrity: {('PASS' if ok else 'FAIL')}; max |Δfusion|={max_delta:.3g}, max |ΔOHP|={max_ohp:.3g}; source: {pred_path.name}")
                 if not ok:
                     self._append_log('The fused probability does not match the saved branch values. Review the batch files; the interface has not changed the probabilities.')
             except Exception as exc:
@@ -846,6 +852,7 @@ class OHPApp(tk.Tk):
             self.viewer_case.set(ids[0])
             self._load_viewer_case()
         self._write_html_report(out, df)
+        self.local_settings_panel.set_batch(out, self._predictions)
         self._append_log(f'Results loaded: {pred_path}')
 
     def _fill_branch_table(self, df: Any) -> None:

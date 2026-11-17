@@ -2,13 +2,13 @@
 
 ## 1. What to open
 
-Copy the **entire release folder** to a writable local drive on a 64-bit Windows computer. Keep the internal files and directories together. Double-click **`OHP.exe`**. For visible startup diagnostics, use **`start_windows.cmd`**. Neither launcher requires Python to be installed system-wide. The release includes two isolated CPython cores and the inference libraries used by the application.
+Copy the **entire release folder** to a writable local drive on a 64-bit Windows computer. Keep the internal files and directories together. Double-click **`OHP.exe`**. For visible startup diagnostics, use **`start_windows.cmd`** or its equivalent Chinese-named launcher **`启动OHP.cmd`**. Neither launcher requires Python to be installed system-wide. The release includes two isolated CPython cores and the inference libraries used by the application.
 
 The desktop interface is in English. The automatic-mask and supplied-mask routes use the same five frozen OHP predictors and the same fusion rule. Installation-repair tools are included under `tools/`; they are not part of routine patient processing.
 
 ## 2. Computer requirements
 
-Use Windows 10 or Windows 11, 64-bit. A practical planning configuration is **32 GB system RAM**, an **NVIDIA GPU with 12 GB VRAM**, and **at least 20 GB free working space after copying the software**. Larger CT volumes can require more memory and working space. Operating requirements and offline installation details are provided in `RESOURCE_REPORT.md`.
+Use Windows 10 or Windows 11, 64-bit. A practical planning configuration is **32 GB system RAM**, an **NVIDIA GPU with 12 GB VRAM**, and **at least 20 GB free working space after copying the software**. Larger CT volumes can require more memory and working space. The measured resource use for the release-validation cases is reported separately in `RESOURCE_REPORT.md`; these measurements are not a minimum specification for every scan.
 
 An NVIDIA driver compatible with the packaged CUDA 12.8 PyTorch runtime is needed for GPU acceleration. The installed CUDA toolkit is not required. If CUDA is unavailable, the application can select CPU inference; automatic full-volume segmentation can then be considerably slower. The complete release runs locally without an Internet connection. Internet access is needed only if dependencies are being repaired or reinstalled.
 
@@ -109,3 +109,7 @@ The branch weights, selected features, normalisation parameters, three habitat i
 The source code is provided with an MIT license. Bundled KiTS21 pretrained weights retain CC BY 4.0 attribution. Bundled Python and inference dependencies retain their respective licenses. See `LICENSE`, `THIRD_PARTY_NOTICES.md`, `licenses/` and the distribution license records in the runtime directories.
 
 Large binary models and the optional ready-to-run runtime should be distributed through a release archive or an appropriate research-data repository. Do not commit the 250 MB segmentation checkpoint as an ordinary Git object. Preserve the version and checksum manifests when redistributing a validated release.
+
+## Optional local operating settings in v1.1.0
+
+The Local Settings tab supports a custom threshold, a local intercept update from labelled calibration data, and an assumption-dependent prevalence scenario. Defaults retain the original probability and threshold. Optional results and parameters are exported separately; original predictions, branch explanations and model weights are unchanged. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions, input requirements and verification scope. The original inference evaluation used v1.0.0; these optional settings have not been clinically validated in the reported cohorts.

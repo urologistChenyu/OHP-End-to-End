@@ -23,3 +23,13 @@ Related platform: [OHP Reader Study](https://github.com/urologistChenyu/OHP-Read
 ## Full-cohort evaluation data
 
 The final system evaluation completed risk outputs for 671 patients: 665 automatic-mask and six clinician-reviewed-mask routes. Paired automatic/reference comparisons included 125 internal-validation, 154 external-test and 90 prospective patients. Aggregate counts, ROC data and paired metrics are available in the [analysis v1.0.2 release](https://github.com/urologistChenyu/OHP-Paper-Data-Models/releases/tag/v1.0.2). These additions do not change the v1.0.0 trained models or Windows runtime.
+
+## v1.1.0 optional local operating settings
+
+The desktop application adds a Local Settings tab for a custom decision threshold, an intercept-only update fitted from locally labelled data, and an explicitly assumption-dependent prevalence scenario. Original probabilities, five-branch contributions, frozen weights and the locked default threshold are retained. Optional results and settings are exported separately. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions and verification scope.
+
+The original cohort and reader-study results use the unmodified model outputs; the optional settings have not been clinically validated in those cohorts. Software checks include exact default output/classification agreement for 671 archived predictions, data-free numerical and file-integrity tests, and installer rollback verification.
+
+### Windows download and update
+
+New users first download all three complete Windows runtime parts from the [v1.0.0 release](https://github.com/urologistChenyu/OHP-End-to-End/releases/tag/v1.0.0) and extract them into the same application folder. Then extract the small [v1.1.0 update](https://github.com/urologistChenyu/OHP-End-to-End/releases/tag/v1.1.0) into that application folder and run Apply_Local_Settings_Update.cmd. Existing users need only the update. The installer backs up changed source files and provides a restore option. Model weights and runtime libraries are unchanged and are not downloaded again for the update.

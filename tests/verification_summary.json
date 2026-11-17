@@ -1,0 +1,33 @@
+{
+  "default_probability_identity_cases": 671,
+  "default_classification_identity_cases": 671,
+  "source_sha256": {
+    "ohp_gui.py": "e8a52e729a9fcc7bbe1eb12af8aa1cf7dd78f63a232b3d08daa702bb266053cd",
+    "local_risk_settings.py": "c861e01e250ba25c2ebaadb1a083c6391f2c75826d9473038461dd181795d9ea",
+    "local_settings_panel.py": "13434fa34f22d68f4b19075e72f75ddf8743b902205dcf45ef8380a3f40f0780"
+  },
+  "source_unchanged": true,
+  "fit_vs_independent_optimizer_absolute_difference": 3.344492627288531e-09,
+  "fit_mean_risk_absolute_error": 0.0,
+  "scope": "Numerical and backward-compatibility verification, not new clinical model validation",
+  "gui_geometry": [
+    {
+      "width": 1440,
+      "height": 900,
+      "panel_width": 1032,
+      "panel_height": 757,
+      "controls_within_panel": true
+    },
+    {
+      "width": 1180,
+      "height": 760,
+      "panel_width": 772,
+      "panel_height": 617,
+      "controls_within_panel": true
+    }
+  ],
+  "desktop_load_and_reset": "passed",
+  "data_free_feature_tests": 14,
+  "original_contract_tests": 5,
+  "install_and_restore": "passed"
+}
