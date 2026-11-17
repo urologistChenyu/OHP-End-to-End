@@ -1,3 +1,0 @@
-OHP v1.0 complete Windows application
-
-Download all three OHP_End_to_End_Windows_partNN_of03.zip files and extract every ZIP into the same destination. Together they create one complete 02_End_to_End folder. Open 02_End_to_End/OHP.exe after extraction. No OneKey or system Python installation is needed. Keep the complete folder together. See USER_MANUAL_EN.md for hardware and NVIDIA driver requirements.
