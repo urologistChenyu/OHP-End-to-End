@@ -97,7 +97,7 @@ class OHPApp(tk.Tk):
 
     def __init__(self) -> None:
         super().__init__()
-        self.title('OHP End-to-End Analysis · v1.1.0')
+        self.title('OHP End-to-End Analysis · v1.0')
         self.geometry('1440x900')
         self.minsize(1180, 760)
         self.configure(background='#f4f7fb')

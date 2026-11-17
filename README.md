@@ -2,7 +2,7 @@
 
 ## Download the complete Windows application
 
-**Use the [v1.0.0 release downloads](https://github.com/urologistChenyu/OHP-End-to-End/releases/tag/v1.0.0) for the ready-to-run application.** Download all three OHP_End_to_End_Windows_partNN_of03.zip files and extract each into the same destination. Together they create one complete 02_End_to_End folder. Open 02_End_to_End/OHP.exe after all three archives have been extracted. Windows can extract these ordinary ZIP files without another archive program.
+**Use the [v1.0 release downloads](https://github.com/urologistChenyu/OHP-End-to-End/releases/tag/v1.0) for the ready-to-run application.** Download all three OHP_End_to_End_Windows_partNN_of03.zip files and extract each into the same destination. Together they create one complete 02_End_to_End folder. Open 02_End_to_End/OHP.exe after all three archives have been extracted. Windows can extract these ordinary ZIP files without another archive program.
 
 The complete download contains both Python environments, the trained models and processing libraries. No OneKey installation or system Python is required. Use 64-bit Windows 10/11; hardware and NVIDIA-driver requirements are in USER_MANUAL_EN.md. Keep the complete application folder together.
 
@@ -18,18 +18,15 @@ This Code view contains the inference implementation, desktop source, fixed conf
 
 The code is provided under the existing OHP source licence; pretrained segmentation assets and bundled third-party software retain their respective licences and attributions. See LICENSE, THIRD_PARTY_NOTICES.md and licenses/.
 
-Related platform: [OHP Reader Study](https://github.com/urologistChenyu/OHP-Reader-Study-Platform). Version: v1.0.0.
+Related platform: [OHP Reader Study](https://github.com/urologistChenyu/OHP-Reader-Study-Platform). Version: v1.0.
 
 ## Full-cohort evaluation data
 
-The final system evaluation completed risk outputs for 671 patients: 665 automatic-mask and six clinician-reviewed-mask routes. Paired automatic/reference comparisons included 125 internal-validation, 154 external-test and 90 prospective patients. Aggregate counts, ROC data and paired metrics are available in the [analysis v1.0.2 release](https://github.com/urologistChenyu/OHP-Paper-Data-Models/releases/tag/v1.0.2). These additions do not change the v1.0.0 trained models or Windows runtime.
+The final system evaluation completed risk outputs for 671 patients: 665 automatic-mask and six clinician-reviewed-mask routes. Paired automatic/reference comparisons included 125 internal-validation, 154 external-test and 90 prospective patients. Aggregate counts, ROC data and paired metrics are available in the [analysis v1.0.2 release](https://github.com/urologistChenyu/OHP-Paper-Data-Models/releases/tag/v1.0.2). These additions do not change the v1.0 trained models or Windows runtime.
 
-## v1.1.0 optional local operating settings
 
-The desktop application adds a Local Settings tab for a custom decision threshold, an intercept-only update fitted from locally labelled data, and an explicitly assumption-dependent prevalence scenario. Original probabilities, five-branch contributions, frozen weights and the locked default threshold are retained. Optional results and settings are exported separately. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions and verification scope.
+## Local operating settings
 
-The original cohort and reader-study results use the unmodified model outputs; the optional settings have not been clinically validated in those cohorts. Software checks include exact default output/classification agreement for 671 archived predictions, data-free numerical and file-integrity tests, and installer rollback verification.
+The Local Settings tab supports a configurable decision threshold, an intercept-only update estimated from locally labelled data, and an explicitly assumption-dependent prevalence scenario. Original probabilities, five-branch outputs, frozen weights and the locked default threshold are retained. Optional results and parameters are exported separately. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions and input requirements.
 
-### Windows download and update
-
-New users first download all three complete Windows runtime parts from the [v1.0.0 release](https://github.com/urologistChenyu/OHP-End-to-End/releases/tag/v1.0.0) and extract them into the same application folder. Then extract the small [v1.1.0 update](https://github.com/urologistChenyu/OHP-End-to-End/releases/tag/v1.1.0) into that application folder and run Apply_Local_Settings_Update.cmd. Existing users need only the update. The installer backs up changed source files and provides a restore option. Model weights and runtime libraries are unchanged and are not downloaded again for the update.
+All reported cohort and reader-study analyses use the locked default probabilities and threshold. Local calibration and threshold choices require separate evaluation. Verification includes 19 source/feature checks and exact default probability/classification agreement for 671 archived predictions.

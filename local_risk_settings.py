@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-SOFTWARE_VERSION = "1.1.0"
+SOFTWARE_VERSION = "1.0"
 DEFAULT_THRESHOLD = 0.3530539465287861
 DEVELOPMENT_PREVALENCE = 114 / 296
 EPSILON = 1e-12

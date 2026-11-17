@@ -1,6 +1,6 @@
-# Local operating settings in software v1.1.0
+# Local operating settings in software v1.0
 
-The Local Settings tab is optional. Its default state uses the original probability and the original threshold, 0.3530539465287861. The frozen five-branch predictors, preprocessing, segmentation and arithmetic-mean fusion have not changed. The original v1.0.0 software evaluation is distinct from verification of this interface addition.
+The Local Settings tab is optional. Its default state uses the original probability and the original threshold, 0.3530539465287861. The frozen five-branch predictors, preprocessing, segmentation and arithmetic-mean fusion have not changed. All reported cohort and reader-study analyses use the locked default probabilities and threshold. Local-setting verification is reported separately.
 
 ## Available settings
 
@@ -16,7 +16,7 @@ Apply Preview shows original and configured probabilities and classifications si
 
 Overview, Branch Results, the original HTML report, branch contributions and Grad-CAM remain tied to the original model probability. Arithmetic branch contributions do not decompose the nonlinearly adjusted local probability. Restore Defaults resets the optional settings and restores the original probability and threshold.
 
-This release adds a configurable post-processing facility. It does not claim improved calibration, diagnostic accuracy, surgical outcomes or clinical benefit for any specific external institution. Those effects need separate evaluation. The published model-performance and reader-study analyses remain based on the original predictions and threshold.
+The application includes a configurable post-processing facility. It does not claim improved calibration, diagnostic accuracy, surgical outcomes or clinical benefit for any specific external institution. Those effects need separate evaluation. The published model-performance and reader-study analyses remain based on the original predictions and threshold.
 
 ## Reproducible software checks
 

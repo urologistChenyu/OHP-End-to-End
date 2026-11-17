@@ -1,5 +1,3 @@
-# Change log
+# OHP desktop application v1.0
 
-## 1.1.0
-
-Added optional local decision-threshold and probability post-processing settings with side-by-side original and configured results, intercept-only fitting from local outcome-labelled CSV data, an explicitly assumption-dependent prevalence scenario, separate auditable exports and a default reset. No changes to frozen preprocessing, segmentation, branch weights, equal-weight fusion, original threshold or original prediction files.
+The application provides DICOM input, automatic or clinician-reviewed tumour-mask input, frozen five-branch inference, original probability and classification outputs, branch results, local operating settings and separate auditable exports. The default model probabilities and threshold are used for the reported cohort and reader analyses.

@@ -1,11 +1,6 @@
 {
   "default_probability_identity_cases": 671,
   "default_classification_identity_cases": 671,
-  "source_sha256": {
-    "ohp_gui.py": "e8a52e729a9fcc7bbe1eb12af8aa1cf7dd78f63a232b3d08daa702bb266053cd",
-    "local_risk_settings.py": "c861e01e250ba25c2ebaadb1a083c6391f2c75826d9473038461dd181795d9ea",
-    "local_settings_panel.py": "13434fa34f22d68f4b19075e72f75ddf8743b902205dcf45ef8380a3f40f0780"
-  },
   "source_unchanged": true,
   "fit_vs_independent_optimizer_absolute_difference": 3.344492627288531e-09,
   "fit_mean_risk_absolute_error": 0.0,
@@ -27,7 +22,13 @@
     }
   ],
   "desktop_load_and_reset": "passed",
+  "prediction_source_sha256": "27efe831ba328074bc6b4b8d7226915304108e5c11e33d6cf41d85c9cc683585",
+  "software_version": "1.0",
   "data_free_feature_tests": 14,
-  "original_contract_tests": 5,
-  "install_and_restore": "passed"
+  "model_contract_tests": 5,
+  "source_sha256": {
+    "ohp_gui.py": "bb709a1587ef881264b6ed54e57b169d33d82423d36ca96f9bbd89fcb5f34475",
+    "local_risk_settings.py": "017681151ea4af622bc7f5167e89099cecd48f254e3816f884241618e9430975",
+    "local_settings_panel.py": "13434fa34f22d68f4b19075e72f75ddf8743b902205dcf45ef8380a3f40f0780"
+  }
 }

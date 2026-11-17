@@ -110,6 +110,6 @@ The source code is provided with an MIT license. Bundled KiTS21 pretrained weigh
 
 Large binary models and the optional ready-to-run runtime should be distributed through a release archive or an appropriate research-data repository. Do not commit the 250 MB segmentation checkpoint as an ordinary Git object. Preserve the version and checksum manifests when redistributing a validated release.
 
-## Optional local operating settings in v1.1.0
+## Optional local operating settings in v1.0
 
-The Local Settings tab supports a custom threshold, a local intercept update from labelled calibration data, and an assumption-dependent prevalence scenario. Defaults retain the original probability and threshold. Optional results and parameters are exported separately; original predictions, branch explanations and model weights are unchanged. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions, input requirements and verification scope. The original inference evaluation used v1.0.0; these optional settings have not been clinically validated in the reported cohorts.
+The Local Settings tab supports a custom threshold, a local intercept update from labelled calibration data, and an assumption-dependent prevalence scenario. Defaults retain the original probability and threshold. Optional results and parameters are exported separately; original predictions, branch explanations and model weights are unchanged. See [LOCAL_SETTINGS.md](LOCAL_SETTINGS.md) for equations, assumptions, input requirements and verification scope. All reported cohort evaluations use the locked default settings; optional local adjustments require separate clinical evaluation.
