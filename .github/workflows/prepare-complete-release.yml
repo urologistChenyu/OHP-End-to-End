@@ -1,0 +1,15 @@
+name: Prepare complete current Windows release
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct and verify exact release archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python .release-preparation/reconstruct.py
