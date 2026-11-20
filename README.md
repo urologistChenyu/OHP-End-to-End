@@ -14,7 +14,7 @@ Input one arterial-phase CT/DICOM series and Age (years), Tumorsize (cm, CT diam
 
 ## Source code and final trained assets
 
-This Code view contains the inference implementation, desktop source, fixed configurations and setup documentation. The complete runtime and binary assets are distributed in the release downloads, rather than the GitHub-generated source-code archive. The final model files, features, preprocessing and anonymous cohort predictions are documented in [OHP Paper Data and Models](https://github.com/urologistChenyu/OHP-Paper-Data-Models). Source-only users can prepare the pinned environments under environment/ and retrieve the matching trained assets before inference. The full Windows release already includes them.
+This Code view contains the inference implementation, desktop source, fixed configurations and setup documentation. The complete runtime and binary assets are distributed in the release downloads, rather than the GitHub-generated source-code archive. The final model files, features, preprocessing and analysis code are documented in [OHP Analysis Code](https://github.com/urologistChenyu/OHP-Analysis-Code). Source-only users can prepare the pinned environments under environment/ and retrieve the matching trained assets before inference. The full Windows release already includes them.
 
 The code is provided under the existing OHP source licence; pretrained segmentation assets and bundled third-party software retain their respective licences and attributions. See LICENSE, THIRD_PARTY_NOTICES.md and licenses/.
 
@@ -22,7 +22,7 @@ Related platform: [OHP Reader Study](https://github.com/urologistChenyu/OHP-Read
 
 ## Full-cohort evaluation data
 
-The final system evaluation completed risk outputs for 671 patients: 665 automatic-mask and six clinician-reviewed-mask routes. Paired automatic/reference comparisons included 125 internal-validation, 154 external-test and 90 prospective patients. Aggregate counts, ROC data and paired metrics are available in the [analysis v1.0.2 release](https://github.com/urologistChenyu/OHP-Paper-Data-Models/releases/tag/v1.0.2). These additions do not change the v1.0 trained models or Windows runtime.
+The final system evaluation completed risk outputs for 671 patients: 665 automatic-mask and six clinician-reviewed-mask routes. Paired automatic/reference comparisons included 125 internal-validation, 154 external-test and 90 prospective patients. The reported aggregate results are presented in the manuscript and its appendix. Participant-level study data are available by controlled request through the corresponding author. These additions do not change the v1.0 trained models or Windows runtime.
 
 
 ## Local operating settings
